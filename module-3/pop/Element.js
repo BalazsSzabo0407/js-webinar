@@ -19,6 +19,8 @@
  * @see {@link https://www.protractortest.org/#/api?view=ElementFinder}
  */
 
+const { element } = require("../test/mock/ElementFinder");
+
 
 class Element {
     constructor(name, locator) {
@@ -35,7 +37,7 @@ class Element {
         if (this.children.hasOwnProperty(child.name)) {
             throw new Error(child.name + " is already added!");
         }
-        this.children[child.name] = child 
+        this.children[child.name] = child;
     }
 }
 

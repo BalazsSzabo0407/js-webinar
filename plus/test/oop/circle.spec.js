@@ -1,7 +1,7 @@
 const Circle = require("../../oop/circle");
 const expect = require('chai').expect;
 
-describe("Circle", () => {
+describe.only("Circle", () => {
     it("should store radius", () => {
         const circle = new Circle(12);
         expect(circle.r).to.equal(12);

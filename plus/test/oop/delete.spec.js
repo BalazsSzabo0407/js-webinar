@@ -1,7 +1,7 @@
 const del = require("../../oop/delete");
 const expect = require('chai').expect;
 
-describe(".delete(o)", () => {
+describe.only(".delete(o)", () => {
     it("should handle if not object is passed", () => {
         expect(() => del(1)).to.throw();
     });

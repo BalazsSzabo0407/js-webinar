@@ -17,17 +17,26 @@
  * @see {@link https://www.protractortest.org/#/api?view=ElementArrayFinder}
  */
 
+const { element } = require("../test/mock/ElementFinder");
 const Element = require("./Element");
 
 class Elements extends Element {
     constructor(name, location) {
         super(name, location);
 
+
         this.children = null;
 
     }
     addChildren() {
         throw new Error("Elements cannot have children!");
+    }
+    setParent(parent) {
+        this.parent = parent;
+    }
+    all(){
+    }
+    get(n){
     }
 }
 
