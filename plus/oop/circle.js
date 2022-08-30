@@ -8,17 +8,18 @@
  */
 class Circle {
     constructor(r) {
-        if (r<0) {
-            throw Error ("Invalid radius");
+        if (r < 0) {
+            throw Error("Invalid radius");
         }
         this.r = r;
     }
+    
     getPerimeter() {
-        return (2*this.r*Math.PI);
+        return (2 * this.r * Math.PI);
     }
 
-    getArea () {
-        return (this.r*this.r*Math.PI);
+    getArea() {
+        return (this.r * this.r * Math.PI);
     }
 
 }

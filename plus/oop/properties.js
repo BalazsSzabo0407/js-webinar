@@ -6,16 +6,8 @@
  *                     or empty array if it is not an object
  */
 
-function properties(obejctName){
-    let keys = [];
-    if (typeof obejctName != "object") {
-        return keys;
-    }
-    
-    for (let i = 0; i<Object.keys(obejctName).length; i++) {
-        keys[i]=Object.keys(obejctName)[i]
-    
-}
-    return keys
+function properties(obejctName) {
+    return  typeof obejctName == "object" ? Object.keys(obejctName) : [];
+
 }
 module.exports = properties;

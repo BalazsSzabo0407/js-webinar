@@ -35,8 +35,10 @@ class Elements extends Element {
         this.parent = parent;
     }
     all(){
+        return element.all(this.locator);
     }
     get(n){
+        return element.all().get(n);
     }
 }
 

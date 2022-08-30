@@ -38,6 +38,21 @@ class Element {
             throw new Error(child.name + " is already added!");
         }
         this.children[child.name] = child;
+        child.setParent(this);
+    }
+    get(name) {
+        if (!name) {
+            return element(this.locator);
+        }
+        for (const childName in this.children) {
+            try {
+                return this.children[childName].get(name);
+            }
+            catch (error) {
+                //abc
+            }
+        }
+        throw new Error("There is no child");
     }
 }
 

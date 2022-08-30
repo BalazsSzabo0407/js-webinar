@@ -25,6 +25,9 @@ class Layout extends Element {
     setParent() {
         throw Error ("Cannot set Parent!");
     }
+    load() {
+        return browser.get(this.url);
+    }
 }
 
 module.exports = Layout;
