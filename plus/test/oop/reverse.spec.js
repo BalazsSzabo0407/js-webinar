@@ -1,7 +1,7 @@
 const reverse = require("../../oop/reverse");
 const expect = require('chai').expect;
 
-describe.only(".reverse(o)", () => {
+describe(".reverse(o)", () => {
     it("should handle if not object is passed", () => {
         expect(() => reverse(1)).to.throw();
     });

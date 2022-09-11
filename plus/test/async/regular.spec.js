@@ -1,7 +1,7 @@
 const { expect } = require("chai");
 const f = require("../../async/regular");
 
-describe("async / regular", () => {
+describe.only("async / regular", () => {
     it("should should return correct value", async () => {
         const result = await f();
         expect(result).to.equal(10);

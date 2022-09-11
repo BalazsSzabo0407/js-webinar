@@ -44,6 +44,9 @@ class Element {
         if (!name) {
             return element(this.locator);
         }
+        if (this.children[name]){
+            return this.children[name].get();
+        }
         for (const childName in this.children) {
             try {
                 return this.children[childName].get(name);

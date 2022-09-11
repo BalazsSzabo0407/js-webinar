@@ -1,7 +1,7 @@
 const properties = require("../../oop/properties");
 const expect = require('chai').expect;
 
-describe.only(".properties", () => {
+describe(".properties", () => {
     it("should handle if parameter is not object", () => {
         expect(properties(42)).to.have.lengthOf(0);
     });
