@@ -5,3 +5,8 @@
  * @param {string} toConvert
  * @returns {string} camel-case string or empty string in other cases
  */
+function toCamelCase(toConvert){
+    
+}
+_.camelCase('Foo Bar');
+module.exports = toCamelCase
