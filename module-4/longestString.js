@@ -8,6 +8,9 @@
  */
 function longestString(strings) {
     let longest = [""]
+    if (!Array.isArray(strings)){
+        return ""
+    }
     for (const element of strings){
         if (element.length > longest[0].length){
             longest[0] = element

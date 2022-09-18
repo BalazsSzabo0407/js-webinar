@@ -12,9 +12,10 @@
  * @returns {boolean} true if the array is properly sorted,
  *                    false otherwise
  */
-function arraySorted(items) {
-    sorted = items.slice()
-    items.sort()
+/*function arraySorted(items,ignore) {
+
+    sorted = items.slice().toLowerCase()
+    items.sort().toLowerCase()
     if (JSON.stringify(sorted) === JSON.stringify(items)) {
         return true
     }
@@ -25,3 +26,4 @@ let a = ["hello word", "ok!"]
 console.log(arraySorted(a, "h"))
 
 module.exports = arraySorted
+*/

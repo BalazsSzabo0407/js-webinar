@@ -3,7 +3,7 @@ const expect = require('chai').expect;
 const testData = require('./romanToDec.json');
 const sinon = require('sinon');
 
-describe('Module 4 - romanToDec', () => {
+describe.only('Module 4 - romanToDec', () => {
 
     beforeEach(() => {
         sinon.spy(console, "warn");

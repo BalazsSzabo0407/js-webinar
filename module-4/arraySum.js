@@ -7,12 +7,16 @@
  * @param {Array} elements
  * @returns {number} summary of all integers or 0 in other cases
  */
-function arraySum(Array) {
+function arraySum(array) {
+    if (!Array.isArray(array)){
+        return 0
+    }
     let numbers = [];
     let sum = 0;
-    for (let i = 0; i < Array.length; i++) {
-        if (typeof Array[i] == "number") {
-            numbers.push(Array[i]);
+    array = array.flat(10)
+    for (let i = 0; i < array.length; i++) {
+        if (typeof array[i] == "number") {
+            numbers.push(array[i]);
         }
     }
     for (let j = 0; j < numbers.length; j++){

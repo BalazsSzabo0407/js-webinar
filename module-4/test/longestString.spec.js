@@ -2,7 +2,7 @@ const longestString = require('../longestString');
 const expect = require('chai').expect;
 const testData = require('./longestString.json');
 
-describe('Module 4 - longestString', () => {
+describe.only('Module 4 - longestString', () => {
     it('should be a function', () => {
         expect(longestString).to.be.instanceOf(Function);
     });
