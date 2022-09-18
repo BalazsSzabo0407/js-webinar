@@ -14,7 +14,7 @@ function toCamelCase(toConvert) {
     const words = toConvert.split(" ");
     const cleanWords = words.map(word => {
         return word.split("").filter(c =>{
-            return chars.includes(c.toLocaleLowerCase())
+            return chars.includes(c.toLowerCase())
         }).join("")
     });
     const realWords = cleanWords.filter(word =>{
@@ -22,9 +22,9 @@ function toCamelCase(toConvert) {
     });
     const upperWords = realWords.map((word, i) => {
         if (i === 0) {
-            return word.toLocaleLowerCase();
+            return word.toLowerCase();
         }
-            return word[0].toUpperCase() + word.slice(1).toLocaleLowerCase();
+            return word[0].toUpperCase() + word.slice(1).toLowerCase();
     });
     return upperWords.join("");
 
