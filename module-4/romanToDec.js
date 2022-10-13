@@ -10,7 +10,7 @@
 
 function romanToDec(roman) {
     if (typeof roman !== "string") {
-        throw new Error("Not a string")
+        console.warn("Not a string")
     }
     const romanNumbers = "ivxlcdm"
 
@@ -31,6 +31,7 @@ function romanToDec(roman) {
         let next = romanToArab[roman[i + 1]];
 
         if (romanNumbers.indexOf(roman[i]) === -1) {
+            console.warn("Not a valid roman number")
             return false
         }
 
@@ -44,5 +45,5 @@ function romanToDec(roman) {
     return sum;
 }
 
-console.log(romanToDec("mmq"))
+console.log(romanToDec("VII"))
 module.exports = romanToDec

@@ -18,19 +18,84 @@ describe.only('calc', () => {
      */
     // TODO: write test cases to test the calculator
 
-    it("should have proper value");
+    it("should have proper value", () => {
+    const c = calc(3)
+    const result = c.v
+    expect(result).to.equal(3)
+    });
 
-    describe("add", () => { 
-        it("should exist");
+    describe("add", () => {
+        it("should exist", () => {
+            //given
+            const c = calc(5)
+            //when
+            //then
+            expect(c.add).not.to.be.undefined;
+        });
 
-        it("should be able to add number to current value");
+        it("should be able to add number to current value", () => {
+            const c = calc(3)
+            const result = c.add(5).v
+            expect(result).to.equal(8)
+        });
     });
     describe("minus", () => {
-        it("should exist");
+        it("should exist", () => {
+            const c = calc(2)
+            expect(c.minus).not.to.be.undefined;
+        });
 
-        it("should be able to substract a number from the current value");
+        it("should be able to substract a number from the current value", () => {
+            const c = calc(3)
+            const result = c.minus(2).v
+            expect(result).to.equal(1);
+        });
     });
-    // ...
+
+    describe("sqrt", () => {
+        it("should exist", () => {
+            const c = calc(2)
+            expect(c.sqrt).not.to.be.undefined;
+        });
+
+        it("should be able to calculate square root of a number", () => {
+            const c = calc(4)
+            const result = c.sqrt().v
+            expect(result).to.equal(2);
+        });
+
+        it("should throw an error in case of negative sqrt", () => {
+            const c = calc(-3)
+            expect(() => c.sqrt()).to.throw("Square root of a negative value cannot be determined!")
+        });
+    });
+
+    describe("times", () => {
+        it("should exist", () => {
+            const c = calc(2)
+            expect(c.times).not.to.be.undefined;
+        });
+
+        it("should be able to multiply a number", () => {
+            const c = calc(3)
+            const result = c.times(10).v
+            expect(result).to.equal(30);
+        });
+    });
+
+    describe("modulo", () => {
+        it("should exist", () => {
+            const c = calc(2)
+            expect(c.modulo).not.to.be.undefined;
+        });
+
+        it("should be able to modulo a number", () => {
+            const c = calc(10)
+            const result = c.modulo(5).v
+            expect(result).to.equal(0);
+        });
+    });
+
     describe("divide", () => {
         it("should exist", () => {
             //Given
@@ -54,14 +119,19 @@ describe.only('calc', () => {
             const c = calc(42);
             //when 
             //then
-            expect(() => c.divide.bind(0)).to.throw("Division");
-            expect(c.divide.bind(null,0)).to.throw("Division");
+            expect(() => c.divide(0)).to.throw("Division by 0 is not possible!");
+            //expect(c.divide.bind(null,0)).to.throw("Division by 0 is not possible!");
         });
     });
-    // ...
 
+    describe("multiple operations", () => {
 
-
+        it("should be able to do multiple operations and return correct number", () => {
+            const c = calc(3)
+            const result = c.add(4).minus(3).times(6).v
+            expect(result).to.equal(24);
+        });
+    });
 
 
 });

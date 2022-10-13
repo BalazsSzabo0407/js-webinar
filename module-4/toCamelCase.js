@@ -11,7 +11,7 @@ function toCamelCase(toConvert) {
     if (typeof toConvert !== "string") {
         return "";
     }
-    const words = toConvert.split(" ");
+    const words = toConvert.replace("\n"," ").replace("\t"," ").split(" ")
     const cleanWords = words.map(word => {
         return word.split("").filter(c =>{
             return chars.includes(c.toLowerCase())
