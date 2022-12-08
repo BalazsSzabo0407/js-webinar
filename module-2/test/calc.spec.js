@@ -27,71 +27,78 @@ describe.only('calc', () => {
     describe("add", () => {
         it("should exist", () => {
             //given
-            const c = calc(5)
+            const c = calc(5);
             //when
             //then
             expect(c.add).not.to.be.undefined;
         });
 
         it("should be able to add number to current value", () => {
-            const c = calc(3)
-            const result = c.add(5).v
-            expect(result).to.equal(8)
+            const c = calc(3);
+            const result = c.add(5).v;
+            expect(result).to.equal(8);
         });
+
+        //it("should throw error if we try to add a letter", () => {
+        //    const c = calc(3);
+        //    expect(()=> c.add("a")).to.throw("Error");
+
+        //});
+
     });
     describe("minus", () => {
         it("should exist", () => {
-            const c = calc(2)
+            const c = calc(2);
             expect(c.minus).not.to.be.undefined;
         });
 
         it("should be able to substract a number from the current value", () => {
-            const c = calc(3)
-            const result = c.minus(2).v
+            const c = calc(3);
+            const result = c.minus(2).v;
             expect(result).to.equal(1);
         });
     });
 
     describe("sqrt", () => {
         it("should exist", () => {
-            const c = calc(2)
+            const c = calc(2);
             expect(c.sqrt).not.to.be.undefined;
         });
 
         it("should be able to calculate square root of a number", () => {
-            const c = calc(4)
-            const result = c.sqrt().v
+            const c = calc(4);
+            const result = c.sqrt().v;
             expect(result).to.equal(2);
         });
 
         it("should throw an error in case of negative sqrt", () => {
-            const c = calc(-3)
-            expect(() => c.sqrt()).to.throw("Square root of a negative value cannot be determined!")
+            const c = calc(-3);
+            expect(() => c.sqrt()).to.throw("Square root of a negative value cannot be determined!");
         });
     });
 
     describe("times", () => {
         it("should exist", () => {
-            const c = calc(2)
+            const c = calc(2);
             expect(c.times).not.to.be.undefined;
         });
 
         it("should be able to multiply a number", () => {
-            const c = calc(3)
-            const result = c.times(10).v
+            const c = calc(3);
+            const result = c.times(10).v;
             expect(result).to.equal(30);
         });
     });
 
     describe("modulo", () => {
         it("should exist", () => {
-            const c = calc(2)
+            const c = calc(2);
             expect(c.modulo).not.to.be.undefined;
         });
 
         it("should be able to modulo a number", () => {
-            const c = calc(10)
-            const result = c.modulo(5).v
+            const c = calc(10);
+            const result = c.modulo(5).v;
             expect(result).to.equal(0);
         });
     });
@@ -99,7 +106,7 @@ describe.only('calc', () => {
     describe("divide", () => {
         it("should exist", () => {
             //Given
-            const c = calc(42)
+            const c = calc(42);
             //When
             //Then
             expect(c.divide).not.to.be.undefined;
@@ -127,8 +134,8 @@ describe.only('calc', () => {
     describe("multiple operations", () => {
 
         it("should be able to do multiple operations and return correct number", () => {
-            const c = calc(3)
-            const result = c.add(4).minus(3).times(6).v
+            const c = calc(3);
+            const result = c.add(4).minus(3).times(6).v;
             expect(result).to.equal(24);
         });
     });
